@@ -1,0 +1,286 @@
+@prefix : <urn:webprotege:ontology:bf92aaea-a0eb-4b80-bf63-d6fc8100b757#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://sustainable-agri-trade.eu/semantics/model#> .
+
+<https://sustainable-agri-trade.eu/semantics/model#> rdf:type owl:Ontology ;
+                                                      owl:imports <http://www.w3.org/2004/02/skos/core> .
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://sustainable-agri-trade.eu/semantics/model#Actor
+:Actor rdf:type owl:Class ;
+       rdfs:label "Actor"@en .
+
+
+###  https://sustainable-agri-trade.eu/semantics/model#ActorType
+:ActorType rdf:type owl:Class ;
+           rdfs:label "ActorType"@en .
+
+
+###  https://sustainable-agri-trade.eu/semantics/model#CaseStudy
+:CaseStudy rdf:type owl:Class ;
+           rdfs:label "Case Study"@en .
+
+
+###  https://sustainable-agri-trade.eu/semantics/model#Country
+:Country rdf:type owl:Class ;
+         rdfs:subClassOf :GeoScope .
+
+
+###  https://sustainable-agri-trade.eu/semantics/model#Dataset
+:Dataset rdf:type owl:Class ;
+         rdfs:subClassOf :KnowledgeResource ;
+         rdfs:label "Dataset"@en .
+
+
+###  https://sustainable-agri-trade.eu/semantics/model#Document
+:Document rdf:type owl:Class ;
+          rdfs:subClassOf :KnowledgeResource ;
+          rdfs:label "Document"@en .
+
+
+###  https://sustainable-agri-trade.eu/semantics/model#FieldOfWork
+:FieldOfWork rdf:type owl:Class ;
+             rdfs:label "Field of Work"@en .
+
+
+###  https://sustainable-agri-trade.eu/semantics/model#GeoScope
+:GeoScope rdf:type owl:Class ;
+          rdfs:subClassOf :Scope ;
+          rdfs:label "Geographic Scope"@en .
+
+
+###  https://sustainable-agri-trade.eu/semantics/model#GeospatialData
+:GeospatialData rdf:type owl:Class ;
+                rdfs:subClassOf :Dataset .
+
+
+###  https://sustainable-agri-trade.eu/semantics/model#KnowledgeResource
+:KnowledgeResource rdf:type owl:Class ;
+                   rdfs:label "KnowledgeResource"@en .
+
+
+###  https://sustainable-agri-trade.eu/semantics/model#Organisation
+:Organisation rdf:type owl:Class ;
+              rdfs:subClassOf :Actor ;
+              rdfs:label "Organisation"@en .
+
+
+###  https://sustainable-agri-trade.eu/semantics/model#Person
+:Person rdf:type owl:Class ;
+        rdfs:subClassOf :Actor ;
+        rdfs:label "Person"@en .
+
+
+###  https://sustainable-agri-trade.eu/semantics/model#Publication
+:Publication rdf:type owl:Class ;
+             rdfs:subClassOf :Document .
+
+
+###  https://sustainable-agri-trade.eu/semantics/model#Region
+:Region rdf:type owl:Class ;
+        rdfs:subClassOf :GeoScope .
+
+
+###  https://sustainable-agri-trade.eu/semantics/model#Report
+:Report rdf:type owl:Class ;
+        rdfs:subClassOf :Document .
+
+
+###  https://sustainable-agri-trade.eu/semantics/model#Scope
+:Scope rdf:type owl:Class ;
+       rdfs:label "Scope"@en .
+
+
+###  https://sustainable-agri-trade.eu/semantics/model#Statistics
+:Statistics rdf:type owl:Class ;
+            rdfs:subClassOf :Dataset .
+
+
+###  https://sustainable-agri-trade.eu/semantics/model#TabularData
+:TabularData rdf:type owl:Class ;
+             rdfs:subClassOf :Dataset .
+
+
+###  https://sustainable-agri-trade.eu/semantics/model#TemporalScope
+:TemporalScope rdf:type owl:Class ;
+               rdfs:subClassOf :Scope ;
+               rdfs:label "Temporal Scope"@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://sustainable-agri-trade.eu/semantics/model#Academia
+:Academia rdf:type owl:NamedIndividual ,
+                   <http://www.w3.org/2004/02/skos/core#Concept> ;
+          rdfs:label "Academia"@en .
+
+
+###  https://sustainable-agri-trade.eu/semantics/model#AgriFoodRelatedProcesses
+:AgriFoodRelatedProcesses rdf:type owl:NamedIndividual ,
+                                   <http://www.w3.org/2004/02/skos/core#Concept> ;
+                          rdfs:label "Agri-food related processes"@en .
+
+
+###  https://sustainable-agri-trade.eu/semantics/model#AgriFoodTrade
+:AgriFoodTrade rdf:type owl:NamedIndividual ,
+                        <http://www.w3.org/2004/02/skos/core#Concept> ;
+               rdfs:label "Agri-food trade"@en .
+
+
+###  https://sustainable-agri-trade.eu/semantics/model#AgriculturalPolicy
+:AgriculturalPolicy rdf:type owl:NamedIndividual ,
+                             <http://www.w3.org/2004/02/skos/core#Concept> ;
+                    rdfs:label "Agricultural policies"@en .
+
+
+###  https://sustainable-agri-trade.eu/semantics/model#AgriculturalWorker
+:AgriculturalWorker rdf:type owl:NamedIndividual ,
+                             <http://www.w3.org/2004/02/skos/core#Concept> .
+
+
+###  https://sustainable-agri-trade.eu/semantics/model#Consumers
+:Consumers rdf:type owl:NamedIndividual ,
+                    <http://www.w3.org/2004/02/skos/core#Concept> ;
+           rdfs:label "Consumers association"@en .
+
+
+###  https://sustainable-agri-trade.eu/semantics/model#EnablingConditions
+:EnablingConditions rdf:type owl:NamedIndividual ,
+                             <http://www.w3.org/2004/02/skos/core#Concept> ;
+                    rdfs:label "Enabling conditions for agri-food trade"@en .
+
+
+###  https://sustainable-agri-trade.eu/semantics/model#Engineer
+:Engineer rdf:type owl:NamedIndividual ,
+                   <http://www.w3.org/2004/02/skos/core#Concept> ;
+          rdfs:label "Scientific Publication"@en .
+
+
+###  https://sustainable-agri-trade.eu/semantics/model#EnvironmentalSustainability
+:EnvironmentalSustainability rdf:type owl:NamedIndividual ,
+                                      <http://www.w3.org/2004/02/skos/core#Concept> ;
+                             rdfs:label "Environmental sustainability"@en .
+
+
+###  https://sustainable-agri-trade.eu/semantics/model#Farmers
+:Farmers rdf:type owl:NamedIndividual ,
+                  <http://www.w3.org/2004/02/skos/core#Concept> .
+
+
+###  https://sustainable-agri-trade.eu/semantics/model#FieldsOfWork
+:FieldsOfWork rdf:type owl:NamedIndividual ,
+                       <http://www.w3.org/2004/02/skos/core#ConceptScheme> ;
+              <http://purl.org/dc/terms/description> "A collection of the fields of work relevant to the scope and objectives of the MATS Sustainable Trade Hub"@en .
+
+
+###  https://sustainable-agri-trade.eu/semantics/model#Financial
+:Financial rdf:type owl:NamedIndividual ,
+                    <http://www.w3.org/2004/02/skos/core#Concept> ;
+           rdfs:label "Financial institutions"@en .
+
+
+###  https://sustainable-agri-trade.eu/semantics/model#FoodSecurityNutrition
+:FoodSecurityNutrition rdf:type owl:NamedIndividual ,
+                                <http://www.w3.org/2004/02/skos/core#Concept> ;
+                       rdfs:label "Food security and nutrition"@en .
+
+
+###  https://sustainable-agri-trade.eu/semantics/model#FoodStandardsNorms
+:FoodStandardsNorms rdf:type owl:NamedIndividual ,
+                             <http://www.w3.org/2004/02/skos/core#Concept> ;
+                    rdfs:label "Food standards and norms"@en .
+
+
+###  https://sustainable-agri-trade.eu/semantics/model#FoodSystemsGovernance
+:FoodSystemsGovernance rdf:type owl:NamedIndividual ,
+                                <http://www.w3.org/2004/02/skos/core#Concept> ;
+                       rdfs:label "Food systems governance"@en .
+
+
+###  https://sustainable-agri-trade.eu/semantics/model#FoodSystemsTransformation
+:FoodSystemsTransformation rdf:type owl:NamedIndividual ,
+                                    <http://www.w3.org/2004/02/skos/core#Concept> ;
+                           rdfs:label "Food systems transformation"@en .
+
+
+###  https://sustainable-agri-trade.eu/semantics/model#Governmental
+:Governmental rdf:type owl:NamedIndividual ,
+                       <http://www.w3.org/2004/02/skos/core#Concept> ;
+              rdfs:label "Governmental organisation or policy body"@en .
+
+
+###  https://sustainable-agri-trade.eu/semantics/model#HumanRights
+:HumanRights rdf:type owl:NamedIndividual ,
+                      <http://www.w3.org/2004/02/skos/core#Concept> ;
+             rdfs:label "Human rights"@en .
+
+
+###  https://sustainable-agri-trade.eu/semantics/model#HumanWellbeing
+:HumanWellbeing rdf:type owl:NamedIndividual ,
+                         <http://www.w3.org/2004/02/skos/core#Concept> ;
+                rdfs:label "Human wellbeing and social engagement"@en .
+
+
+###  https://sustainable-agri-trade.eu/semantics/model#InvestementsFinancing
+:InvestementsFinancing rdf:type owl:NamedIndividual ,
+                                <http://www.w3.org/2004/02/skos/core#Concept> ;
+                       rdfs:label "Investments and financing"@en .
+
+
+###  https://sustainable-agri-trade.eu/semantics/model#NGO
+:NGO rdf:type owl:NamedIndividual ,
+              <http://www.w3.org/2004/02/skos/core#Concept> ;
+     rdfs:label "Non-governmental organisation"@en .
+
+
+###  https://sustainable-agri-trade.eu/semantics/model#OrganisationTypes
+:OrganisationTypes rdf:type owl:NamedIndividual ,
+                            <http://www.w3.org/2004/02/skos/core#ConceptScheme> ;
+                   <http://purl.org/dc/terms/description> "The collection of the actor types expected to express interest or get involved in MATS activities"@en .
+
+
+###  https://sustainable-agri-trade.eu/semantics/model#OutcomesImpacts
+:OutcomesImpacts rdf:type owl:NamedIndividual ,
+                          <http://www.w3.org/2004/02/skos/core#Concept> ;
+                 rdfs:label "Outcomes and impacts of agri-food trade"@en .
+
+
+###  https://sustainable-agri-trade.eu/semantics/model#Planner
+:Planner rdf:type owl:NamedIndividual ,
+                  <http://www.w3.org/2004/02/skos/core#Concept> .
+
+
+###  https://sustainable-agri-trade.eu/semantics/model#Research
+:Research rdf:type owl:NamedIndividual ,
+                   <http://www.w3.org/2004/02/skos/core#Concept> ;
+          rdfs:label "Research"@en .
+
+
+###  https://sustainable-agri-trade.eu/semantics/model#Technical
+:Technical rdf:type owl:NamedIndividual ,
+                    <http://www.w3.org/2004/02/skos/core#Concept> ;
+           rdfs:label "Technical expert"@en .
+
+
+###  https://sustainable-agri-trade.eu/semantics/model#TradePolicyRegulation
+:TradePolicyRegulation rdf:type owl:NamedIndividual ,
+                                <http://www.w3.org/2004/02/skos/core#Concept> ;
+                       rdfs:label "Trade policy regulation"@en .
+
+
+###  https://sustainable-agri-trade.eu/semantics/model#Trading
+:Trading rdf:type owl:NamedIndividual ,
+                  <http://www.w3.org/2004/02/skos/core#Concept> ;
+         rdfs:label "Trading"@en .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
